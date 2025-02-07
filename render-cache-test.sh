@@ -4,6 +4,8 @@ set -o errexit
 
 RENDER_SRC=/opt/render/project/src
 
+echo $XDG_CACHE_DIR
+
 echo "Testing Cache Clear"
 if [[ ! -f $XDG_CACHE_DIR/cache-test/my-cached-file ]]; then
     echo "No cached file .... creating"
