@@ -2,10 +2,10 @@ services:
   - type: web
     name: next-js
     runtime: node
-    plan: free
-    buildCommand: pnpm install; pnpm build
+    plan: starter
+    buildCommand: ./render-cache-test.sh && pnpm install && pnpm build
     startCommand: pnpm start
-    autoDeploy: false
+    autoDeploy: true
     envVars:
       - key: PORT
         value: 10000
