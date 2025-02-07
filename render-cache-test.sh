@@ -5,12 +5,13 @@ set -o errexit
 RENDER_SRC=/opt/render/project/src
 
 echo "Testing Cache Clear"
-if [[ ! -f $XDG_CACHE_DIR/my-cached-file ]]; then
+if [[ ! -f $XDG_CACHE_DIR/cache-test/my-cached-file ]]; then
     echo "No cached file .... creating"
-    echo "File cached" > $XDG_CACHE_DIR/my-cached-file
-    cat $XDG_CACHE_DIR/my-cached-file
+    mkdir -p $XDG_CACHE_DIR/cache-test
+    echo "File cached" > $XDG_CACHE_DIR/cache-test/my-cached-file
+    cat $XDG_CACHE_DIR/cache-test/my-cached-file
 else
-    cat $XDG_CACHE_DIR/my-cached-file
+    cat $XDG_CACHE_DIR/cache-test/my-cached-file
 fi
 
 echo "Testing NextJS cache"
